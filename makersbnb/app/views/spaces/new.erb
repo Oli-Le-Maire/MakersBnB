@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" body="body "href="<%=url('/style.css')%>" />
+  </head>
+  <body>
+    <div class='container'>
+      <h1>List your space:</h1>
+      <form action='/spaces' method='post'>
+        <input type='text' class='input_field' name='name' placeholder='Property name'required>
+        <input type='text' class='input_field' name='description' placeholder='Description' required>
+        <input type='text' class='input_field' name='price_per_night' placeholder='Price per night' required>
+        <label for='start_date'>First available date:</label>
+        <input type='date' class='input_field' name='start_date' required>
+        <label for='start_date'>Last available date:</label>
+        <input type='date' class='input_field' name='end_date' required>
+        <input type='submit' class='button' value='Submit'>
+      </form>
+    </div>
+  </body>
+</html>

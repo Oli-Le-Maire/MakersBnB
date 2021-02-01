@@ -1,0 +1,27 @@
+<head>
+  <title> MakersBnB </title>
+  <link type="text/css" rel="stylesheet" body="body "href="<%=url('/style.css')%>" />
+</head>
+
+<body>
+  <div class='container'>
+  <% if current_user %>
+    <h2><b>Hi, <%= current_user.name %> </b></h2>
+  <% end %>
+
+  <%= flash[:notice] %>
+  <div class='listings'>
+  <ul>
+    <% @spaces.each do |space| %>
+      <div class='space_listing' id='<%= space.id %>'>
+        <li style='list-style: none;'>
+          <a id='more_info' href="/spaces/<%= space.id %>/moreinfo"><h2><%= space.name %></h2></a>
+          <p><%= space.description %></p>
+          <p> £<%= space.price_per_night %> per night</p>
+        </li>
+        <% end %>
+      </div>
+  </ul>
+  </div>
+  </div>
+</body>
